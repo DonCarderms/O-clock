@@ -17,10 +17,12 @@ const getHours = () => {
     }
 }
 setInterval(function() {
-    digital.innerHTML = `<p>${getHours().hour}h: ${getHours().minute}m :${getHours().second}s</p>`
+    const { hour, minute, second } = getHours()
+
+    digital.innerHTML = `<p>${hour}h ${minute}m ${second}s</p>`
 
     loader.style.display = 'block'
-    loader.style.setProperty('--loaderBeforeTransform', `rotate(${getHours().second * 6}deg)`)
-    loader.style.setProperty('--loaderAftereTransform', `rotate(${getHours().minute * 6}deg)`)
-    hoursBar.style.setProperty('--loaderHoursTransform', `rotate(${getHours().hour * 30}deg)`)
+    loader.style.setProperty('--loaderBeforeTransform', `rotate(${second * 6}deg)`)
+    loader.style.setProperty('--loaderAftereTransform', `rotate(${minute * 6}deg)`)
+    hoursBar.style.setProperty('--loaderHoursTransform', `rotate(${hour * 30}deg)`)
 }, 1000);
