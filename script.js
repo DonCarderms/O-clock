@@ -16,7 +16,9 @@ const getHours = () => {
         second,
     }
 }
-setInterval(function() {
+
+
+const moverPonteiros_AtualizarRelogio = () => {
     const { hour, minute, second } = getHours()
 
     digital.innerHTML = `<p>${hour}h ${minute}m ${second}s</p>`
@@ -25,4 +27,5 @@ setInterval(function() {
     loader.style.setProperty('--loaderBeforeTransform', `rotate(${second * 6}deg)`)
     loader.style.setProperty('--loaderAftereTransform', `rotate(${minute * 6}deg)`)
     hoursBar.style.setProperty('--loaderHoursTransform', `rotate(${hour * 30}deg)`)
-}, 1000);
+}
+setInterval(moverPonteiros_AtualizarRelogio, 1000);
