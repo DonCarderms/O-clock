@@ -3,9 +3,6 @@ const getHours = () => {
          this.hours = this.date.getHours()
          this.minutes = this.date.getMinutes()
          this.seconds = this.date.getSeconds()
-         // this.hour = this.hours < 10 ? `0${hours}` : this.hours
-         // this.minute = this.minutes < 10 ? `0${minutes}` : this.minutes
-         // this.second = this.seconds < 10 ? `0${seconds}` : this.seconds
         
         return {
             hour : hours < 10 ? `0${hours}` : hours,
