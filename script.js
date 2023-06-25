@@ -1,4 +1,4 @@
-const getHour = () => {
+const getHours = () => {
          this.date = new Date()
          this.hours = this.date.getHours()
          this.minutes = this.date.getMinutes()
