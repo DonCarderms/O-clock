@@ -1,22 +1,23 @@
 const getHour = () => {
-        date : new Date()
-        hours :date.getHours()
-        minutes : date.getMinutes()
-        seconds : date.getSeconds()
-        hour : hours < 10 ? `0${hours}` : hours
-        minute : minutes < 10 ? `0${minutes}` : minutes
-        second : seconds < 10 ? `0${seconds}` : seconds
-    return {
-        hour,
-        minute,
-        second,
-    }
+         this.date = new Date()
+         this.hours = this.date.getHours()
+         this.minutes = this.date.getMinutes()
+         this.seconds = this.date.getSeconds()
+         this.hour = this.hours < 10 ? `0${hours}` : this.hours
+         this.minute = this.minutes < 10 ? `0${minutes}` : this.minutes
+         this.second = this.seconds < 10 ? `0${seconds}` : this.seconds
+        
+        return {
+            hour,
+            minute,
+            second,
+        }
 }
 
 const createRelogio = () => {
-     loader : document.querySelector('.loader')
-     digital : document.querySelector('.digital')
-     hoursBar : document.querySelector('.hours')
+     loader = document.querySelector('.loader')
+     digital = document.querySelector('.digital')
+     hoursBar = document.querySelector('.hours')
      this.loader.style.display = 'none'
 
      moverPonteirosRelogio () {
