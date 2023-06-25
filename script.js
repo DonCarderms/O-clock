@@ -3,14 +3,14 @@ const getHour = () => {
          this.hours = this.date.getHours()
          this.minutes = this.date.getMinutes()
          this.seconds = this.date.getSeconds()
-         this.hour = this.hours < 10 ? `0${hours}` : this.hours
-         this.minute = this.minutes < 10 ? `0${minutes}` : this.minutes
-         this.second = this.seconds < 10 ? `0${seconds}` : this.seconds
+         // this.hour = this.hours < 10 ? `0${hours}` : this.hours
+         // this.minute = this.minutes < 10 ? `0${minutes}` : this.minutes
+         // this.second = this.seconds < 10 ? `0${seconds}` : this.seconds
         
         return {
-            hour,
-            minute,
-            second,
+            hour : hours < 10 ? `0${hours}` : hours,
+            minute : minutes < 10 ? `0${minutes}` : minutes,
+            second : seconds < 10 ? `0${seconds}` : seconds,
         }
 }
 
@@ -20,7 +20,7 @@ const createRelogio = () => {
      this.hoursBar = document.querySelector('.hours')
      this.loader.style.display = 'none'
 
-     moverPonteirosRelogio () {
+     this.moverPonteirosRelogio =  () => {
         const { hour, minute, second } = getHours()
     
         digital.innerHTML = `<p>${hour}h ${minute}m ${second}s</p>`
