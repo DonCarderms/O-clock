@@ -1,11 +1,4 @@
-
-const createRelogio = () => {
-    const loader = document.querySelector('.loader')
-    const digital = document.querySelector('.digital')
-    const hoursBar = document.querySelector('.hours')
-    loader.style.display = 'none'
-    
-    const getHours = () => {
+const getHours = () => {
         const date = new Date()
         const hours = date.getHours()
         const minutes = date.getMinutes()
@@ -18,7 +11,14 @@ const createRelogio = () => {
             minute,
             second,
         }
-    }
+}
+
+const createRelogio = () => {
+    const loader = document.querySelector('.loader')
+    const digital = document.querySelector('.digital')
+    const hoursBar = document.querySelector('.hours')
+    loader.style.display = 'none'
+
     const moverPonteirosRelogio = () => {
         const { hour, minute, second } = getHours()
     
