@@ -15,9 +15,9 @@ const getHour = () => {
 }
 
 const createRelogio = () => {
-     loader = document.querySelector('.loader')
-     digital = document.querySelector('.digital')
-     hoursBar = document.querySelector('.hours')
+     this.loader = document.querySelector('.loader')
+     this.digital = document.querySelector('.digital')
+     this.hoursBar = document.querySelector('.hours')
      this.loader.style.display = 'none'
 
      moverPonteirosRelogio () {
