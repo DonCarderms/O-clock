@@ -36,8 +36,3 @@
     loader.style.display = "none";
     setInterval(moverPonteirosRelogio, 1000);
 }();
-
-const Relogio = {
-
-};
-
