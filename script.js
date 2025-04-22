@@ -1,12 +1,9 @@
-const Relogio = {
-  loader: document.querySelector(".loader"),
-  digital: document.querySelector(".digital"),
-  hoursBar: document.querySelector(".hours"),
-  init() {
-    Relogio.loader.style.display = "none";
-    setInterval(Relogio.moverPonteirosRelogio, 1000);
-  },
-  getHours() {
+{
+  const loader = document.querySelector(".loader");
+  const digital = document.querySelector(".digital");
+  const hoursBar = document.querySelector(".hours");
+
+  const getHours = () => {
     const date = new Date();
     const hours = date.getHours();
     const minutes = date.getMinutes();
@@ -16,25 +13,33 @@ const Relogio = {
       minute: minutes < 10 ? `0${minutes}` : minutes,
       second: seconds < 10 ? `0${seconds}` : seconds
     };
-  },
-  moverPonteirosRelogio() {
-    const { hour, minute, second } = Relogio.getHours();
+  }
 
-    Relogio.digital.innerHTML = `<p>${hour}h ${minute}m ${second}s</p>`;
+  const displayDigital = () => {
+    const { hour, minute, second } = getHours();
+    const content = document.createElement('p')
+    content.innerText = `${hour}h ${minute}m ${second}s`
+    digital.appendChild(content)
+  }
 
-    Relogio.loader.style.display = "block";
-    Relogio.loader.style.setProperty(
+  const moveReloge = () => {
+    const { hour, minute, second } = getHours();
+    loader.style.display = "block";
+    loader.style.setProperty(
       "--loaderBeforeTransform",
       `rotate(${second * 6}deg)`
     );
-    Relogio.loader.style.setProperty(
+    loader.style.setProperty(
       "--loaderAftereTransform",
       `rotate(${minute * 6}deg)`
     );
-    Relogio.hoursBar.style.setProperty(
+    hoursBar.style.setProperty(
       "--loaderHoursTransform",
       `rotate(${hour * 30}deg)`
     );
   }
-};
-Relogio.init();
+
+  loader.style.display = "none";
+  setInterval(moveReloge, 1000);
+  displayDigital()
+}

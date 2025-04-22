@@ -1,161 +1,183 @@
 html {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #2e233e;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #2e233e;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-main{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.loader{
-    margin-top:80px;
-    position: relative;
-    transform: scale(5);
-    border: 1px solid;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    color: #3bd9d9;
-    animation: animation 1s ease forwards;
+
+.loader {
+  margin-top: 80px;
+  position: relative;
+  transform: scale(5);
+  border: 1px solid;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  color: #3bd9d9;
+  animation: animation 1s ease forwards;
+  transition: ease forward 2s;
 }
-.reloge-numbers{
-    position: absolute;
-    font-size: 5px;
+
+.reloge-numbers {
+  position: absolute;
+  font-size: 5px;
 }
-.reloge-numbers:nth-child(1){
+
+.reloge-numbers:nth-child(1) {
   top: 7%;
   right: 12px;
 }
-.reloge-numbers:nth-child(2){
+
+.reloge-numbers:nth-child(2) {
   top: 25%;
   right: 3px;
 }
-.reloge-numbers:nth-child(3){
+
+.reloge-numbers:nth-child(3) {
   top: 50%;
   right: 2px;
 }
-.reloge-numbers:nth-child(4){
+
+.reloge-numbers:nth-child(4) {
   bottom: 20%;
   right: 5px;
 }
-.reloge-numbers:nth-child(5){
+
+.reloge-numbers:nth-child(5) {
   bottom: 7%;
   right: 13px;
 }
-.reloge-numbers:nth-child(6){
-    bottom: 0;
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
-    text-align: center;
+
+.reloge-numbers:nth-child(6) {
+  bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
 }
-.reloge-numbers:nth-child(7){
+
+.reloge-numbers:nth-child(7) {
   bottom: 7%;
   left: 13px;
 }
-.reloge-numbers:nth-child(8){
+
+.reloge-numbers:nth-child(8) {
   bottom: 20%;
   left: 5px;
 }
-.reloge-numbers:nth-child(9){
+
+.reloge-numbers:nth-child(9) {
   top: 50%;
   left: 2px;
 }
-.reloge-numbers:nth-child(11){
+
+.reloge-numbers:nth-child(11) {
   top: 7%;
   left: 12px;
 }
-.reloge-numbers:nth-child(10){
+
+.reloge-numbers:nth-child(10) {
   top: 25%;
   left: 4px;
 }
-.reloge-numbers:nth-child(12){
-    top: 2px;
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
-    text-align: center;
-}
-.hours{
-    position: absolute;
-    width: 0px;
-    height: 18px;
-    display: block;
-    border-left: 1px solid #3bd9d9;
-    left: 24px;
-    border-radius: 1px;
-    top: 8px;
-    transform: var(--loaderHoursTransform, rotate(0deg));
+
+.reloge-numbers:nth-child(12) {
+  top: 2px;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
 }
 
-.loader::after{
-    position: absolute;
-    width: 0px;
-    height: 20px;
-    display: block;
-    border-left: 1px solid #3bd9d9;
-    content: "";
-    left: 24px;
-    border-radius: 1px;
-    top: 6px;
-    transform: var(--loaderAftereTransform, rotate(0deg));
+.hours {
+  position: absolute;
+  width: 0px;
+  height: 18px;
+  display: block;
+  border-left: 1px solid #3bd9d9;
+  left: 24px;
+  border-radius: 50%;
+  top: 8px;
+  transform: var(--loaderHoursTransform, rotate(0deg));
 }
 
-.loader::before{
-    position: absolute;
-    width: 0px;
-    height: 22px;
-    display: block;
-    border-left: 1px solid #3bd9d9;
-    content: "";
-    left: 24px;
-    border-radius: 1px;
-    top: 4px;
-    transform: var(--loaderBeforeTransform, rotate(0deg)); 
+.loader::after {
+  position: absolute;
+  width: 0px;
+  height: 20px;
+  display: block;
+  border-left: 1px solid #3bd9d9;
+  content: "";
+  left: 24px;
+  border-radius: 50%;
+  top: 6px;
+  transform: var(--loaderAftereTransform, rotate(0deg));
+}
+
+.loader::before {
+  position: absolute;
+  width: 0px;
+  height: 22px;
+  display: block;
+  border-left: 1px solid #3bd9d9;
+  content: "";
+  left: 24px;
+  border-radius: 50%;
+  top: 4px;
+  transform: var(--loaderBeforeTransform, rotate(0deg));
 }
 
 .loader::after,
 .loader::before,
-.hours{
-    transform-origin: bottom;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
+.hours {
+  transform-origin: bottom;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 }
 
-@keyframes animation{
+@keyframes animation {
   from {
     opacity: 0;
     transform: scale(10);
   }
+
   to {
     opacity: 1;
     transform: scale(5);
   }
 }
-.digital{
-    padding: 10px 20px;
-    position: absolute;
-    top: 15%;
-    color: #3bd9d9;
-    background-color: #181740;
-    border: 1px solid #3bd9d9;
-    border-radius: 30px;
+
+.digital {
+  padding: 10px 20px;
+  position: absolute;
+  top: 15%;
+  color: #3bd9d9;
+  background-color: #181740;
+  border: 1px solid #3bd9d9;
+  border-radius: 30px;
 }
-.digital p{
-    font-size: 2em;
+
+.digital p {
+  font-size: 2em;
 }
-a{
-   text-decoration: none;
-    color: #3bd9d9;
+
+a {
+  text-decoration: none;
+  color: #3bd9d9;
 }
-.copyrigth{
-    position: absolute;
-    bottom: 15%; 
+
+.copyrigth {
+  position: absolute;
+  bottom: 15%;
 }
