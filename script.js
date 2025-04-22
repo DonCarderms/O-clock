@@ -22,7 +22,7 @@
     digital.appendChild(content)
   }
 
-  const moveReloge = () => {
+  const moveClockBars = () => {
     const { hour, minute, second } = getHours();
     loader.style.display = "block";
     loader.style.setProperty(
@@ -40,6 +40,6 @@
   }
 
   loader.style.display = "none";
-  setInterval(moveReloge, 1000);
+  setInterval(moveClockBars, 1000);
   displayDigital()
 }
